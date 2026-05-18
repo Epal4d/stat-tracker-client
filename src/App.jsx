@@ -1,14 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Roster from './pages/Roster'
+import Games from './pages/Games'
 
 function App() {
   return (
-    <div>
-      <h1>Stat Tracker</h1>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/roster" element={<Roster />} />
+      <Route path="/games" element={<Games />} />
+    </Routes>
   )
 }
+
 export default App
