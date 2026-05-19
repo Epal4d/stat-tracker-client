@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import NavBar from './components/nav/NavBar'
+import ProtectedRoute from './components/ProtectedRoute'
 import Home from './pages/Home'
 import Roster from './pages/Roster'
 import Games from './pages/Games'
@@ -13,12 +14,12 @@ function App() {
       <NavBar />
       <div className="container mt-4">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/roster" element={<Roster />} />
-          <Route path="/games" element={<Games />} />
-          <Route path="/matches/:matchId" element={<MatchDetail />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+          <Route path="/roster" element={<ProtectedRoute><Roster /></ProtectedRoute>} />
+          <Route path="/games" element={<ProtectedRoute><Games /></ProtectedRoute>} />
+          <Route path="/matches/:matchId" element={<ProtectedRoute><MatchDetail /></ProtectedRoute>} />
         </Routes>
       </div>
     </>
