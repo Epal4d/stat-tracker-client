@@ -76,6 +76,16 @@ function PlayerMatchForm({ onSave, onCancel, existingStat, players }) {
               <input type="number" className="form-control" name="minutes" value={formData.minutes} onChange={handleChange} min="0" />
             </div>
           </div>
+          <div className="row mb-3">
+            <div className="col">
+                <label className="form-label">Yellow Cards</label>
+                <input type="number" className="form-control" name="yellow_cards" value={formData.yellow_cards} onChange={handleChange} min="0" />
+            </div>
+            <div className="col">
+                <label className="form-label">Red Cards</label>
+                <input type="number" className="form-control" name="red_cards" value={formData.red_cards} onChange={handleChange} min="0" />
+            </div>
+            </div>
           <div className="d-flex gap-2">
             <button type="submit" className="btn btn-primary">
               {existingStat ? 'Save Changes' : 'Record Stats'}
