@@ -29,6 +29,10 @@ function MatchForm({ onSave, onCancel, existingMatch }) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    if(!formData.match_type_id) {
+      alert('Please select a match type')
+      return
+    }
     onSave(formData)
   }
 
